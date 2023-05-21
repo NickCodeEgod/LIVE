@@ -87,24 +87,19 @@ const dataArray = [
 ];
 
 const container = document.getElementById('user-container');
-
 dataArray.forEach(data => {
     const userCard = document.createElement('div');
     userCard.classList.add('user-card');
-
     const userImage = document.createElement('img');
     userImage.src = data.userImage;
     userImage.classList.add('user-image');
     userCard.appendChild(userImage);
-
     const userName = document.createElement('h3');
     userName.textContent = data.userName + ' ' + data.userLastName;
     userCard.appendChild(userName);
-
     const userAge = document.createElement('p');
     userAge.textContent = 'Age: ' + data.userAge;
     userCard.appendChild(userAge);
-
     const userAddresses = document.createElement('ul');
     data.userAddresses.forEach(address => {
         const listItem = document.createElement('li');
@@ -112,6 +107,5 @@ dataArray.forEach(data => {
         userAddresses.appendChild(listItem);
     });
     userCard.appendChild(userAddresses);
-
     container.appendChild(userCard);
 });
